@@ -53,6 +53,8 @@ function selectfile {
 }
 
 function readfile {
+
+  
   x=0
 
   while read -r line || [[ -n "$line" ]]; do

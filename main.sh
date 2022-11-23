@@ -77,7 +77,6 @@ function editfile {
   do
   
     clear
-    cat -n $filename; echo
     printf '%s\n' "${filearr[@]}"
     read -p "add, replace or remove line or press enter to exit: "  addrm
     

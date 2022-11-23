@@ -78,6 +78,7 @@ function editfile {
   
     clear
     cat -n $filename; echo
+    printf '%s\n' "${filearr[@]}"
     read -p "add, replace or remove line or press enter to exit: "  addrm
     
     if [ "$addrm" == "add" ];
@@ -97,7 +98,7 @@ function editfile {
     elif [ "$addrm" == "remove" ];
     then
     
-      sed -i '$d' $filename
+      unset filearr[-1]
       
     else
       return 0

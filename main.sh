@@ -77,7 +77,7 @@ function editfile {
   do
   
     clear
-    printf '%d%s\n' "${filearr[@]}"; echo
+    printf '%s\n' "${filearr[@]}"; echo
     read -p "add, replace or remove line or press enter to exit: "  addrm
     
     if [ "$addrm" == "add" ];

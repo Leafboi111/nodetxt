@@ -15,7 +15,7 @@ function addfile {
 }
 
 function removefile {
-  read -p "Name of file: " filename
+  read -p "Name of file/directory: " filename
   rm -rf $filename
 }
 

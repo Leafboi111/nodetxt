@@ -75,25 +75,34 @@ function readfile {
 function editfile {
   while true
   do
+  
     clear
     cat -n $filename; echo
     read -p "add, replace or remove line or press enter to exit: "  addrm
+    
     if [ "$addrm" == "add" ];
     then
+    
       read -p "Contents of file: " contents
-      echo $contents >> $filename
+      filearr+=($contents)
+      
     elif [ "$addrm" == "replace" ];
     then
+    
       read -p "Line Number: " lnn
       read -p "Contents of file: " contents
       filearr[(($lnn-1))]=$contents
       printf "%s\n" "${filearr[@]}" > $filename
+      
     elif [ "$addrm" == "remove" ];
     then
+    
       sed -i '$d' $filename
+      
     else
       return 0
     fi
+    
   done
 }
 

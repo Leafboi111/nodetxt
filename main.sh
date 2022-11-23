@@ -5,6 +5,7 @@ str1="Back"
 str2="Add_file"
 str3="Remove_file/directory"
 str4="Add_directory"
+str5="Go_to_directory"
 filename=""
 filearr=()
 
@@ -23,11 +24,16 @@ function addirectory {
   mkdir $dirname
 }
 
+function gotodirectory {
+  read -p "Name of directory: " cddir
+   cd $cddir
+}
+
 function selectfile {
 
   while true
   do
-    teststr="$str1 $str2 $str3 $str4 $("ls")"
+    teststr="$str1 $str2 $str3 $str4 $str5 $("ls")"
     clear
     select input in $teststr
     do
@@ -42,9 +48,12 @@ function selectfile {
         removefile
       elif [ "$input" == "Add_directory" ];
       then
-        adddirectory
+        addirectory
+      elif [ "$input" == "Go_to_directory" ];
+      then
+        gotodirectory
       else
-        cd $input || filename="$input";
+        filename="$input";
         return 0
       fi
       break
@@ -54,17 +63,12 @@ function selectfile {
 
 function readfile {
 
-  
   x=0
 
   while read -r line || [[ -n "$line" ]]; do
     filearr[x]=$line
     let x++
   done <$filename
-  
-  read -p "Hello" filename
-  IFS=$'\n' read -d '' -r -a filecontents < filename
-  echo "${filecontents[@]}"
 
 }
 
@@ -98,4 +102,4 @@ selectfile
 readfile
 tput setaf 39
 editfile
-printf "%s\n" "${filearr[@]}" > $filename
+for value in "${filearr[@]}"; do echo "$value" >> $filename; done

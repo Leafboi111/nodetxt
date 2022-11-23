@@ -103,5 +103,5 @@ readfile
 tput setaf 39
 editfile
 
-<$filename
+touch $filename
 for value in "${filearr[@]}"; do echo "$value" >> $filename; done

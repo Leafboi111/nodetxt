@@ -6,6 +6,7 @@ str2="Add_file"
 str3="Remove_file/directory"
 str4="Add_directory"
 str5="Go_to_directory"
+str6="Go_to_file"
 filename=""
 filearr=()
 
@@ -29,11 +30,18 @@ function gotodirectory {
    cd $cddir
 }
 
+
+function gotofile {
+  read -p "Name of file: " filename
+   cd $cddir
+}
+
 function selectfile {
 
   while true
   do
-    teststr="$str1 $str2 $str3 $str4 $str5 $("ls")"
+    ls
+    teststr="$str1 $str2 $str3 $str4 $str5 $str6"
     clear
     select input in $teststr
     do
@@ -53,7 +61,7 @@ function selectfile {
       then
         gotodirectory
       else
-        filename="$input";
+        gotofile
         return 0
       fi
       break

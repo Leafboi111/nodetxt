@@ -42,6 +42,7 @@ function selectfile {
   do
     teststr="$str1 $str2 $str3 $str4 $str5 $str6"
     clear
+    echo "Files/Directories:"
     ls
     select input in $teststr
     do

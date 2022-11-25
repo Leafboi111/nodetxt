@@ -6,7 +6,7 @@ str2="Add_file"
 str3="Remove_file/directory"
 str4="Add_directory"
 str5="Go_to_directory"
-str6="Go_to_file"
+str6="Edit_file"
 filename=""
 filearr=()
 

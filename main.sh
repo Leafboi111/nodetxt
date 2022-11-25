@@ -40,9 +40,9 @@ function selectfile {
 
   while true
   do
-    ls
     teststr="$str1 $str2 $str3 $str4 $str5 $str6"
     clear
+    ls
     select input in $teststr
     do
       if [ "$input" == "Back" ];

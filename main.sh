@@ -44,9 +44,10 @@ function selectfile {
     clear
     tput setaf 7
     echo "Welcome to nodetxt! Select the file to edit over here."; echo
-    tput setaf 214
+    tput setaf 205
     echo "Files/Directories:"
     ls
+    tput setaf 214
     select input in $teststr
     do
       if [ "$input" == "Back" ];

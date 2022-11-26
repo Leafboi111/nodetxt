@@ -46,7 +46,7 @@ function selectfile {
     echo "Welcome to nodetxt! Select the file to edit over here."; echo
     tput setaf 205
     echo "Files/Directories:"
-    ls
+    ls; echo
     tput setaf 214
     select input in $teststr
     do

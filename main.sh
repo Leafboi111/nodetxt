@@ -44,7 +44,7 @@ function selectfile {
     clear
     tput setaf 7
     echo "Welcome to nodetxt! Select the file to edit over here."; echo
-    tput setaf 205
+    tput setaf 211
     echo "Files/Directories:"
     ls; echo
     tput setaf 214

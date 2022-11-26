@@ -42,7 +42,9 @@ function selectfile {
   do
     teststr="$str1 $str2 $str3 $str4 $str5 $str6"
     clear
+    tput setaf 7
     echo "Welcome to nodetxt! Select the file to edit over here."; echo
+    tput setaf 214
     echo "Files/Directories:"
     ls
     select input in $teststr
@@ -116,7 +118,6 @@ function editfile {
   done
 }
 
-tput setaf 214
 selectfile
 readfile
 tput setaf 39
